@@ -1,0 +1,139 @@
+@import "vars";
+@import "fonts";
+
+*,
+*:focus,
+*::before,
+*::before {
+	outline: none;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+
+
+body {
+	// overflow-x: hidden;
+	background-color: @bg;
+
+	&._no-scroll {
+		overflow: hidden;
+	}
+}
+
+.page-wrap{
+	width: 100%;
+	max-width: 1920px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+}
+
+section{
+	position: relative;
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+div,
+form {
+	box-sizing: border-box;
+}
+
+img,
+svg {
+	max-width: 100%;
+	pointer-events: none;
+}
+
+li,
+ol,
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+
+	&:active,
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.container {
+	max-width: 1200px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+	margin: 0 auto;
+
+	&._extended{
+		max-width: 1600px;
+	}
+	@media screen and @media1200 {
+		max-width: 970px;
+	}
+	@media screen and @media970 {
+		max-width: 768px;
+	}
+	@media screen and @media768 {
+		max-width: 100%;
+	}
+	@media screen and @media375 {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	background-color: #dddddd;
+	border-radius: 50px;
+	overflow: hidden;
+	z-index: 99;
+	position: relative;
+
+	&::-webkit-slider-runnable-track {
+		height: 20px;
+		-webkit-appearance: none;
+		color: #13bba4;
+	}
+
+	&::-webkit-slider-thumb {
+		width: 9px;
+		-webkit-appearance: none;
+		height: 9px;
+		cursor: ew-resize;
+		background: #fff;
+		box-shadow: -6px 0 6px 0px fade(#000, 10%), ~'calc(-100vw - 9px)' 0 0 100vw #1be300;
+		// box-shadow: 0 0 0 11px #1be300;
+		border-radius: 50%;
+		border: 5.5px solid lighten(#1be300, 3%);
+		box-sizing: content-box;
+
+	}
+
+	&::-moz-range-progress {
+		background-color: #1be300;
+	}
+
+	&::-moz-range-track {
+		background-color: #dddddd;
+	}
+
+	&::-ms-fill-lower {
+		background-color: #1be300;
+	}
+
+	&::-ms-fill-upper {
+		background-color: #dddddd;
+	}
+}
+@import "classes";
+@import "titles";
+@import "mixins";
+@import "buttons";
+@import "style";
+@import "modal";

@@ -1,0 +1,91 @@
+@import "mixins";
+
+button {
+	padding: 0;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.btn {
+	padding: 9px 0;
+	min-width: 180px;
+	transition: 0.2s ease-in-out;
+
+	&._sm {
+		padding: 5px 40px;
+	}
+
+	&._md {
+		padding: 12px 45px;
+	}
+
+	&._lg {
+		padding: 20px 65px;
+		@media screen and @media970 {
+			padding: 15px 55px;
+		}
+		@media screen and @media450 {
+			padding: 12px 40px;
+		}
+	}
+
+	&._red {
+		color: #fff;
+		background: @red;
+		box-shadow: 0 9px 20px 0.6px rgba(0, 0, 0, 0.1);
+		border-radius: 34px;
+
+		&:hover {
+			box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .15);
+		}
+	}
+
+	&._tr {
+		min-width: 0;
+		border-radius: 57px;
+
+		&._br {
+			margin: 0 auto;
+			background-color: transparent;
+			border: 2px solid #dddddd;
+		}
+
+		&._active,
+		&:hover {
+			background-color: #07dc17;
+			color: #fff;
+			border-color: #07dc17!important;
+		}
+
+		> span {
+			display: block;
+			margin-top: 3px;
+		}
+	}
+}
+
+.add-btn {
+	background: @red;
+	width: 20px;
+	height: 20px;
+	.--fz-18;
+	color: #fff;
+	transform: scale(1) rotate(0);
+	transition: 0.15s ease-in-out;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		transform: scale(1.08) rotate(90deg);
+	}
+
+	&:focus {
+		transform: scale(0);
+	}
+}
